@@ -98,30 +98,29 @@ NetworkService {
     description = [[Primary Web Service]]
 }
 ```
-**Выходные данные (XML):**
+**Выходные данные (YAML):**
 ```
-<?xml version="1.0" encoding="utf-8"?>
-<database>
-	<database type="dict">
-		<host type="int">19216801</host>
-		<port type="int">5432</port>
-		<max_connections type="int">100</max_connections>
-		<connection_timeout type="int">30</connection_timeout>
-	</database>
-</database>
+NetworkService:
+  host: localhost
+  port: 8080
+  max_connections: 2
+  allowed_protocols:
+  - http
+  - https
+  description: Primary Web Service
 ```
 ### Конфигурация игрового персонажа
 **Входные данные:**
 ```
 ***> RPG Character Configuration
 set BASE_HEALTH = 100
-set STRENGTH_MODIFIER = $+ BASE_HEALTH 50$
+set STRENGTH_MODIFIER = 50
 
 GameCharacter {
     name = [[Warrior]],
-    health = BASE_HEALTH,
-    strength = $+ STRENGTH_MODIFIER 0$,
-    skills = #(sword_fighting archery),
+    health = $+ BASE_HEALTH 0$,
+    strength = $+ STRENGTH_MODIFIER 5$,
+    skills = #([[sword_fighting archery]]),
     race = [[Human]],
     special_ability = [[Critical Strike]]
 }
