@@ -93,7 +93,7 @@ set MAX_CONNECTIONS = 1010
 NetworkService {
     host = [[localhost]],
     port = $+ PORT 0$,
-    max_connections = $mod(MAX_CONNECTIONS,3)$,
+    max_connections = $mod(1010,3)$,
     allowed_protocols = #(http https),
     description = [[Primary Web Service]]
 }
