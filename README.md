@@ -125,21 +125,16 @@ GameCharacter {
     special_ability = [[Critical Strike]]
 }
 ```
-**Выходные данные (XML):**
+**Выходные данные (YAML):**
 ```
-<?xml version="1.0" encoding="utf-8"?>
-<web_config>
-	<webserver type="dict">
-		<hostname type="int">127001</hostname>
-		<port type="int">8080</port>
-		<threads type="int">8</threads>
-		<routes type="dict">
-			<home type="int">1</home>
-			<login type="int">2</login>
-			<logout type="int">3</logout>
-		</routes>
-	</webserver>
-</web_config>
+GameCharacter:
+  name: Warrior
+  health: 100
+  strength: 55
+  skills:
+  - sword_fighting archery
+  race: Human
+  special_ability: Critical Strike
 ```
 ### Конфигурация научного эксперимента
 **Входные данные:**
