@@ -88,7 +88,7 @@ py main.py <имя_файла.yaml>
 ```
 ***> Network Service Configuration
 set PORT = 8080
-set MAX_CONNECTIONS = $+ MAX_CONNECTIONS 10$
+set MAX_CONNECTIONS = 1010
 
 NetworkService {
     host = [[localhost]],
