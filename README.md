@@ -91,10 +91,10 @@ set PORT = 8080
 set MAX_CONNECTIONS = $+ MAX_CONNECTIONS 10$
 
 NetworkService {
-    host = [[localhost]]
-    port = $+ PORT 0$
-    max_connections = MAX_CONNECTIONS
-    allowed_protocols = #(http https)
+    host = [[localhost]],
+    port = $+ PORT 0$,
+    max_connections = MAX_CONNECTIONS,
+    allowed_protocols = #(http https),
     description = [[Primary Web Service]]
 }
 ```
