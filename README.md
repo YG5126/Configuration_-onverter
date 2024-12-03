@@ -141,32 +141,29 @@ GameCharacter:
 ```
 ***> Experimental Setup
 set SAMPLE_SIZE = 50
-set TEMPERATURE = $+ 20 $mod(SAMPLE_SIZE, 10)$
+set TEMPERATURE = 20
 
 ExperimentConfig {
     experiment_type = [[Chemical Reaction]],
-    sample_count = SAMPLE_SIZE,
-    temperature = $+ 20 $chr(TEMPERATURE)$$,
-    chemicals = #(hydrogen oxygen nitrogen),
+    sample_count = $+ SAMPLE_SIZE 0$,
+    temperature = $+ TEMPERATURE 20$,
+    chemicals = #([[hydrogen]] [[oxygen]] [[nitrogen]]),
     safety_level = [[High]],
     notes = [[Precise measurements required]]
 }
 ```
-**Выходные данные (XML):**
+**Выходные данные (YAML):**
 ```
-<?xml version="1.0" encoding="utf-8"?>
-<monitoring_config>
-	<monitoring type="dict">
-		<interval type="int">15</interval>
-		<retention_days type="int">365</retention_days>
-		<services type="dict">
-			<first type="int">1</first>
-			<second type="int">2</second>
-			<third type="int">3</third>
-			<fourth type="int">4</fourth>
-		</services>
-	</monitoring>
-</monitoring_config>
+ExperimentConfig:
+  experiment_type: Chemical Reaction
+  sample_count: 50
+  temperature: 40
+  chemicals:
+  - hydrogen
+  - oxygen
+  - nitrogen
+  safety_level: High
+  notes: Precise measurements required
 ```
 # Результаты тестирования
 ### Тест простой конфигурации
