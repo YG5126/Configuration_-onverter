@@ -6,7 +6,7 @@ from lark import Lark, Transformer, exceptions, LarkError, Tree
 grammar = """
 start: (const_decl | COMMENT)* config
 
-COMMENT: "*>" /.+/
+COMMENT: "***>" /.+/
 
 config: NAME conf
 conf: "{" [pair ("," pair)*] "}"
