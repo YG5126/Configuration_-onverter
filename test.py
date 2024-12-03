@@ -45,7 +45,7 @@ def test_mod_operation():
     assert parse_config(input_text) == expected_output
 
 def test_comment():
-    input_text = '''*> Это комментарий
+    input_text = '''***> Это комментарий
     root {
         number = 10
     }'''
