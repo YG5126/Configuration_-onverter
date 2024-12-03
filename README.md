@@ -66,7 +66,7 @@ cd Configuration_Converter
 ```
 3. Установка библиотеки парсинга Lark
 ```
-script.sh
+pip install PyYAML
 ```
 4. Запустить main.py с указанием имени yaml файла
 ```
