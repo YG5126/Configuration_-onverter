@@ -94,7 +94,7 @@ NetworkService {
     host = [[localhost]],
     port = $+ PORT 0$,
     max_connections = $mod(1010,3)$,
-    allowed_protocols = #(http https),
+    allowed_protocols = #([[http]] [[https]]),
     description = [[Primary Web Service]]
 }
 ```
