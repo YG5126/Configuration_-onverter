@@ -165,8 +165,5 @@ ExperimentConfig:
   safety_level: High
   notes: Precise measurements required
 ```
-# Результаты работы программы
-![image](https://github.com/user-attachments/assets/4f180366-0af7-44be-81a5-15770bd454dc)
-
 # Общие тесты
-![image](https://github.com/user-attachments/assets/4f180366-0af7-44be-81a5-15770bd454dc)
+![image](https://github.com/YG5126/Configuration_Converter/blob/main/Common_test.png)
