@@ -83,19 +83,19 @@ py main.py <имя_файла.yaml>
 ```
 5. Ввод конфигурации в командную строку. Для завершения ввода использовать ctrl + Z
 # Примеры работы программы
-### Настройка базы данных
+### Конфигурация сетевой службы
 **Входные данные:**
 ```
-*> Configuring the database
-def max_conn = 100
-def timeout = 30
-database {
-    database = struct {
-        host = 19216801,
-        port = 5432,
-        max_connections = [max_conn],
-        connection_timeout = [timeout]
-    }
+***> Network Service Configuration
+set PORT = 8080
+set MAX_CONNECTIONS = $+ MAX_CONNECTIONS 10$
+
+NetworkService {
+    host = "localhost",
+    port = $+ PORT 0$,
+    max_connections = MAX_CONNECTIONS,
+    allowed_protocols = #(http https),
+    description = [[Primary Web Service]]
 }
 ```
 **Выходные данные (XML):**
@@ -110,22 +110,20 @@ database {
 	</database>
 </database>
 ```
-### Конфигурация веб-приложения
+### Конфигурация игрового персонажа
 **Входные данные:**
 ```
-*> Web Application Configuration
-def max_threads = 8
-web_config {
-    webserver = struct {
-        hostname = 127001,
-        port = 8080,
-        threads = [max_threads],
-        routes = struct {
-            home = 1,
-            login = 2,
-            logout = 3
-        }
-    }
+***> RPG Character Configuration
+set BASE_HEALTH = 100
+set STRENGTH_MODIFIER = $+ BASE_HEALTH 50$
+
+GameCharacter {
+    name = [[Warrior]],
+    health = BASE_HEALTH,
+    strength = $+ STRENGTH_MODIFIER 0$,
+    skills = #(sword_fighting archery),
+    race = [[Human]],
+    special_ability = [[Critical Strike]]
 }
 ```
 **Выходные данные (XML):**
@@ -144,23 +142,20 @@ web_config {
 	</webserver>
 </web_config>
 ```
-### Конфигурация системы мониторинга
+### Конфигурация научного эксперимента
 **Входные данные:**
 ```
-*> Configuration of the monitoring system
-def interval = 15
-def retention = 365
-monitoring_config {
-    monitoring = struct {
-        interval = [interval],
-        retention_days = [retention],
-        services = struct {
-            first = 1,
-            second = 2,
-            third = 3,
-            fourth = 4
-        }
-    }
+***> Experimental Setup
+set SAMPLE_SIZE = 50
+set TEMPERATURE = $+ 20 $mod(SAMPLE_SIZE, 10)$
+
+ExperimentConfig {
+    experiment_type = [[Chemical Reaction]],
+    sample_count = SAMPLE_SIZE,
+    temperature = $+ 20 $chr(TEMPERATURE)$$,
+    chemicals = #(hydrogen oxygen nitrogen),
+    safety_level = [[High]],
+    notes = [[Precise measurements required]]
 }
 ```
 **Выходные данные (XML):**
